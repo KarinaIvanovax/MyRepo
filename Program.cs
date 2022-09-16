@@ -818,27 +818,96 @@ namespace home
             Console.WriteLine("Добрый день, " + S1name);
             Console.ReadKey();*/
 
-            Console.WriteLine("Задача 35");
-            Console.WriteLine(" ");
-            Console.Write("    ");
-            string message1 = Console.ReadLine();
-            Console.WriteLine("Как тебя зовут?");
-            Console.Write("    ");
-            string S1name = Console.ReadLine();
-            Console.WriteLine("Привет, " + S1name + ". Меня зовут Том Реддл");
-            Console.Write("    ");
-            string message2 = Console.ReadLine();
-            Console.WriteLine("Да");
-            Console.Write("    ");
-            string message3 = Console.ReadLine();   
-            Console.WriteLine("Нет");
-            System.Threading.Thread.Sleep(1000);
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine("Но могу показать");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine("");
-            Console.ReadKey();
+            /* Console.WriteLine("Задача 35");
+             Console.WriteLine(" ");
+             Console.Write("    ");
+             string message1 = Console.ReadLine();
+             Console.WriteLine("Как тебя зовут?");
+             Console.Write("    ");
+             string S1name = Console.ReadLine();
+             Console.WriteLine("Привет, " + S1name + ". Меня зовут Том Реддл");
+             Console.Write("    ");
+             string message2 = Console.ReadLine();
+             Console.WriteLine("Да");
+             Console.Write("    ");
+             string message3 = Console.ReadLine();   
+             Console.WriteLine("Нет");
+             System.Threading.Thread.Sleep(5000);
+             Console.ForegroundColor = ConsoleColor.DarkRed;
+             Console.WriteLine("Но могу показать");
+             Console.ResetColor();
+             Console.WriteLine("");
+             Console.ReadKey();*/
+
+            //Вычислить контрольную цифру штрихкода(EAN13).
+            //a. 12 цифр определяются случайным образом.
+            //b. 12 цифр вводит пользователь
+            /* Console.WriteLine("Задача 36");
+             //Алгоритм поиска этого значения таков:
+             //1) Оставляем 12 цифр(последняя 13 — контрольная которую ищем).
+             //2) Суммируем разряды, стоящие на четных местах.
+             //3) Результат пункта 2 умножаем на 3.
+             //4) Суммируем разряды, стоящие на нечетных местах.
+             //5) Суммируем результаты пунктов 3 и 4.
+             //6) В полученном числе крайнюю справа цифру(остаток от деления на 10) вычесть из 10, если остаток 0 то значение равно 0.
+             Random rnd = new Random();
+             int a = rnd.Next(0, 9);
+             int b = rnd.Next(0, 9);
+             int c = rnd.Next(0, 9);
+             int d = rnd.Next(0, 9);
+             int e = rnd.Next(0, 9);
+             int f = rnd.Next(0, 9);
+             int g = rnd.Next(0, 9);
+             int h = rnd.Next(0, 9);
+             int i = rnd.Next(0, 9);
+             int j = rnd.Next(0, 9);
+             int k = rnd.Next(0, 9);
+             int l = rnd.Next(0, 9);
+             Console.WriteLine($"Сгенерировалось число {a}{b}{c}{d}{e}{f}{g}{h}{i}{j}{k}{l}");
+             int x1 = b + d + f + h + j + l;
+             int x = x1 * 3;
+             int y = a + c + e + g + i + k;
+             int z1 = x + y;
+             double z2 = z1;
+
+             Console.WriteLine($"Последняя цифра в числе {z2} - контрольная цифра штрихкода(EAN13)");
+             Console.ReadKey();*/
+
+           /* Console.WriteLine("Задача 36");
+            Console.WriteLine("Введите 12 раз цифры от 0 до 9");
+            Console.Write(" ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write(" ");
+            int b = int.Parse(Console.ReadLine());
+            Console.Write(" ");
+            int c = int.Parse(Console.ReadLine());
+            Console.Write(" ");
+            int d = int.Parse(Console.ReadLine());
+            Console.Write(" ");
+            int e = int.Parse(Console.ReadLine());
+            Console.Write(" ");
+            int f = int.Parse(Console.ReadLine());
+            Console.Write(" ");
+            int g = int.Parse(Console.ReadLine());
+            Console.Write(" ");
+            int h = int.Parse(Console.ReadLine());
+            Console.Write(" ");
+            int i = int.Parse(Console.ReadLine());
+            Console.Write(" ");
+            int j = int.Parse(Console.ReadLine());
+            Console.Write(" ");
+            int k = int.Parse(Console.ReadLine());
+            Console.Write(" ");
+            int l = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Вы ввели число {a}{b}{c}{d}{e}{f}{g}{h}{i}{j}{k}{l}");
+            int x1 = b + d + f + h + j + l;
+            int x = x1 * 3;
+            int y = a + c + e + g + i + k;
+            int z1 = x + y;
+            double z2 = z1;
+
+            Console.WriteLine($"Последняя цифра в числе  {z2} - контрольная цифра штрихкода(EAN13)");
+            Console.ReadKey();*/
 
         }
     }
