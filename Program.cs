@@ -50,6 +50,16 @@ namespace home
             Console.WriteLine($"L = {L}; S = {S}");
             Console.ReadKey();*/
 
+            //Найти значение y=cos(x)
+            /*Console.WriteLine("Задача 7");
+            Console.WriteLine(" ");
+            Console.WriteLine("Введите значение x");
+            Console.Write("x = ");
+            double x = double.Parse(Console.ReadLine());
+            double y = Math.Cos(x);
+            Console.WriteLine($"cosx = {y}");
+            Console.ReadKey();*/
+
             //нахождение периметра равнобедренной трапеции
             /*Console.WriteLine("Задача 8");
             Console.OutputEncoding = Encoding.UTF8;
@@ -873,41 +883,41 @@ namespace home
              Console.WriteLine($"Последняя цифра в числе {z2} - контрольная цифра штрихкода(EAN13)");
              Console.ReadKey();*/
 
-           /* Console.WriteLine("Задача 36");
-            Console.WriteLine("Введите 12 раз цифры от 0 до 9");
-            Console.Write(" ");
-            int a = int.Parse(Console.ReadLine());
-            Console.Write(" ");
-            int b = int.Parse(Console.ReadLine());
-            Console.Write(" ");
-            int c = int.Parse(Console.ReadLine());
-            Console.Write(" ");
-            int d = int.Parse(Console.ReadLine());
-            Console.Write(" ");
-            int e = int.Parse(Console.ReadLine());
-            Console.Write(" ");
-            int f = int.Parse(Console.ReadLine());
-            Console.Write(" ");
-            int g = int.Parse(Console.ReadLine());
-            Console.Write(" ");
-            int h = int.Parse(Console.ReadLine());
-            Console.Write(" ");
-            int i = int.Parse(Console.ReadLine());
-            Console.Write(" ");
-            int j = int.Parse(Console.ReadLine());
-            Console.Write(" ");
-            int k = int.Parse(Console.ReadLine());
-            Console.Write(" ");
-            int l = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Вы ввели число {a}{b}{c}{d}{e}{f}{g}{h}{i}{j}{k}{l}");
-            int x1 = b + d + f + h + j + l;
-            int x = x1 * 3;
-            int y = a + c + e + g + i + k;
-            int z1 = x + y;
-            double z2 = z1;
+            /* Console.WriteLine("Задача 36");
+             Console.WriteLine("Введите 12 раз цифры от 0 до 9");
+             Console.Write(" ");
+             int a = int.Parse(Console.ReadLine());
+             Console.Write(" ");
+             int b = int.Parse(Console.ReadLine());
+             Console.Write(" ");
+             int c = int.Parse(Console.ReadLine());
+             Console.Write(" ");
+             int d = int.Parse(Console.ReadLine());
+             Console.Write(" ");
+             int e = int.Parse(Console.ReadLine());
+             Console.Write(" ");
+             int f = int.Parse(Console.ReadLine());
+             Console.Write(" ");
+             int g = int.Parse(Console.ReadLine());
+             Console.Write(" ");
+             int h = int.Parse(Console.ReadLine());
+             Console.Write(" ");
+             int i = int.Parse(Console.ReadLine());
+             Console.Write(" ");
+             int j = int.Parse(Console.ReadLine());
+             Console.Write(" ");
+             int k = int.Parse(Console.ReadLine());
+             Console.Write(" ");
+             int l = int.Parse(Console.ReadLine());
+             Console.WriteLine($"Вы ввели число {a}{b}{c}{d}{e}{f}{g}{h}{i}{j}{k}{l}");
+             int x1 = b + d + f + h + j + l;
+             int x = x1 * 3;
+             int y = a + c + e + g + i + k;
+             int z1 = x + y;
+             double z2 = z1;
 
-            Console.WriteLine($"Последняя цифра в числе  {z2} - контрольная цифра штрихкода(EAN13)");
-            Console.ReadKey();*/
+             Console.WriteLine($"Последняя цифра в числе  {z2} - контрольная цифра штрихкода(EAN13)");
+             Console.ReadKey();*/
 
         }
     }
