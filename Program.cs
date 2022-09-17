@@ -1,128 +1,133 @@
-﻿/*try
-{
-    //деление двух любых чисел
-    Console.WriteLine("Задача 1. Поделить два числа");
-    Console.Write("Введите число ");
-    double a = double.Parse(Console.ReadLine());
-    Console.Write("Введите число ");
-    double b = double.Parse(Console.ReadLine());
-    double c = a / b;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-    Console.WriteLine($"Деление={c}");
+namespace Exercises_11_12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*Console.WriteLine("Задача 12");
+             double Striangle = 0.0;
+             double SCircle = 0.0;
+             double SP = 0.0;
+             Console.WriteLine("Выберите фигуру");
+             Console.WriteLine("");
+             Console.WriteLine("Треугольник => нажмите 1 ");
+             Console.WriteLine("Круг => нажмите 2 ");
+             Console.WriteLine("Четырехугольник => нажмите 3 ");
+             int tmp = int.Parse(Console.ReadLine());
+             if (tmp == 1)
+             {
+                 double STriangle = 0.0;
+                 double Ptriangle = 0.0;
+                 Console.WriteLine("Площадь => нажмите 1 ");
+                 Console.WriteLine("Периметр => нажмите 2 ");
+                 int tm = int.Parse(Console.ReadLine());
+                 if (tm == 1)
+                 {
+                     Console.Write("Введите a: ");
+                     string a = Console.ReadLine();
+                     Console.Write("Введите h: ");
+                     string h = Console.ReadLine();
+                     STriangle = Convert.ToDouble(a) * Convert.ToDouble(h) / 2;
+                     Console.WriteLine($"Площадь треугольника = {STriangle}");
+                 }
+                 else if (tm == 2)
+                 {
+                     Console.Write("Введите a: ");
+                     string a = Console.ReadLine();
+                     Console.Write("Введите b: ");
+                     string b = Console.ReadLine();
+                     Console.Write("Введите c: ");
+                     string c = Console.ReadLine();
+                     double PT = Convert.ToDouble(a) + Convert.ToDouble(b) + Convert.ToDouble(c);
+                     Console.WriteLine($"Периметр треугольника = {PT}");
+                 }
+                 else
+                 {
+                     Console.WriteLine("Error");
+                 }
+
+             }
+             else if (tmp == 2)
+             {
+                 double Scircle = 0.0;
+                 double Pcircle = 0.0;
+                 Console.WriteLine("Периметр => нажмите 1 ");
+                 Console.WriteLine("Площадь => нажмите 2 ");
+                 int t = int.Parse(Console.ReadLine());
+                 if (t == 1)
+                 {
+                     Console.Write("Введите R: ");
+                     string R = Console.ReadLine();
+                     double Pcir = 2 * Math.PI * Convert.ToDouble(R);
+                     Console.WriteLine($"Периметр круга = {Pcir}");
+                 }
+                 else if (t == 2)
+                 {
+                     Console.Write("Введите значение радиуса: ");
+                     string R = Console.ReadLine();
+                     SCircle = Math.PI * Math.Pow(Convert.ToDouble(R), 2);
+                     Console.WriteLine($"Площадь круга = {SCircle}");
+                 }
+                 else
+                 {
+                     Console.WriteLine("Error");
+                 }
+
+             }
+
+             else if (tmp == 3)
+             {
+                 double SQuad = 0.0;
+                 double PQuad = 0.0;
+                 Console.WriteLine("Периметр => нажмите 1 ");
+                 Console.WriteLine("Площадь => нажмите 2 ");
+                 int t = int.Parse(Console.ReadLine());
+                 if (t == 1)
+                 {
+                     Console.Write("Введите a: ");
+                     string a = Console.ReadLine();
+                     Console.Write("Введите b: ");
+                     string b = Console.ReadLine();
+                     double PQ = Convert.ToDouble(a) * 2 + Convert.ToDouble(b) * 2;
+                     Console.WriteLine($"Периметр четырехугольника = {PQ}");
+                 }
+                 else if (t == 2)
+                 {
+                     Console.Write("Введите a: ");
+                     string a = Console.ReadLine();
+                     Console.Write("Введите b: ");
+                     string b = Console.ReadLine();
+                     double SQ = Convert.ToDouble(a) * Convert.ToDouble(b);
+                     Console.WriteLine($"Площадь четырехугольника = {SQ}");
+                 }
+                 else
+                 {
+                     Console.WriteLine("Error");
+                 }
+             }
+
+             else
+             {
+                 Console.WriteLine("Error");
+             }
+             Console.WriteLine("Конец программы");
+             Console.ReadKey();*/
+
+            Console.WriteLine("Задача 11");
+            Console.Write("Введите 1 число: ");
+            double firstNumber = double.Parse(Console.ReadLine());
+            Console.Write("Введите 2 число: ");
+            double secondNumber = double.Parse(Console.ReadLine());
+            double c = firstNumber;
+            firstNumber = secondNumber; secondNumber = c;
+            Console.WriteLine($"Число 1 = {firstNumber}, число 2 = {secondNumber}");
+            Console.Clear();
+        }
+    }
 }
-catch(OverflowException caught)
-{
-    Console.WriteLine(caught);
-}
-catch(DivideByZeroException caught)
-{
-    Console.WriteLine(caught);
-}
-finally
-{
-    Console.WriteLine("Блок try-catch завершен");
-}*/
-
-
-
-/*Console.Write("Введите букву от а до я: ");
-{
-    //вывод на экран букв в алфавитном порядке
-    string x = (Console.ReadLine());
-    if (x == "а")
-        Console.Write($"б");
-    else if (x == "б")
-        Console.Write($"в");
-    else if (x == "в")
-        Console.Write($"г");
-    else if (x == "г")
-        Console.Write($"д");
-    else if (x == "д")
-        Console.Write($"е");
-    else if (x == "е")
-        Console.Write($"ж");
-    else if (x == "ж")
-        Console.Write($"з");
-    else if (x == "з")
-        Console.Write($"и");
-    else if (x == "и")
-        Console.Write($"й");
-    else if (x == "й")
-        Console.Write($"к");
-    else if (x == "к")
-        Console.Write($"л");
-    else if (x == "л")
-        Console.Write($"м");
-    else if (x == "м")
-        Console.Write($"н");
-    else if (x == "н")
-        Console.Write($"о");
-    else if (x == "о")
-        Console.Write($"п");
-    else if (x == "п")
-        Console.Write($"р");
-    else if (x == "р")
-        Console.Write($"с");
-    else if (x == "с")
-        Console.Write($"т");
-    else if (x == "т")
-        Console.Write($"у");
-    else if (x == "у")
-        Console.Write($"ф");
-    else if (x == "ф")
-        Console.Write($"х");
-    else if (x == "х")
-        Console.Write($"ц");
-    else if (x == "ц")
-        Console.Write($"ч");
-    else if (x == "ч")
-        Console.Write($"ш");
-    else if (x == "ш")
-        Console.Write($"щ");
-    else if (x == "щ")
-        Console.Write($"ъ");
-    else if (x == "ъ")
-        Console.Write($"ы");
-    else if (x == "ы")
-        Console.Write($"ь");
-    else if (x == "ь")
-        Console.Write($"э");
-    else if (x == "э")
-        Console.Write($"ю");
-    else if (x == "ю")
-        Console.Write($"я");
-    else if (x == "я")
-        Console.Write($"Конец");
-}*/
-/*using System.Text;
-
-Console.OutputEncoding = Encoding.UTF8;
-Console.WriteLine("Решение квадратного уравнения");
-//ввод данных
-Console.Write("a = ");
-var a = double.Parse(Console.ReadLine());
-Console.Write("b = ");
-var b = double.Parse(Console.ReadLine());
-Console.Write("c = ");
-var c = double.Parse(Console.ReadLine());
-
-//дискриминант
-double x1, x2;
-var discriminant = Math.Pow(b, 2) - 4 * a * c;
-if (discriminant < 0)
-{
-    Console.WriteLine("Уравнение не имеет корней");
-}
-else if (discriminant == 0) //уравнение будет иметь два одинаковых корня
-{
-    x1 = -b / (2 * a);
-    x2 = x1;
-}
-else if (discriminant > 0) //уравнение будет иметь два разных корня
-{
-    x1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
-    x2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
-}
-//вывод корней уравнения
-Console.WriteLine($"x1 = {(-b + Math.Sqrt(discriminant)) / (2 * a)}; x2 = {(-b - Math.Sqrt(discriminant)) / (2 * a)}");*/
-
