@@ -4,200 +4,235 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeWork_4
+namespace Lesson4_ot_24._09._22
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Задача 1");
-            ////Вася пытается высунуть голову в форточку размерами a и b см.
-            ////Приняв условно, что его голова — круглая диаметром d см, определить, сможет ли Вася сделать это.
-            ////Для прохождения головы в форточку необходим зазор в 1 см с каждой стороны.
-            //Console.Write("Длина форточки: ");
-            //int a = int.Parse(Console.ReadLine());
-            //Console.Write("Ширина форточки: ");
-            //int b = int.Parse(Console.ReadLine());
-            //Console.Write("Диаметр головы: ");
-            //int d = int.Parse(Console.ReadLine());
-            //if (a > d && b > d)
+            //Console.WriteLine("Упражнение 4.1");
+            ////Написать программу, которая читает с экрана число от 1
+            ////до 365(номер дня в году), переводит этот число в месяц и день месяца.
+            ////Например, число 40 соответствует 9 февраля(високосный год не учитывать).
+            //Console.Write("Введите число от 1 до 365: ");
+            //int day = int.Parse(Console.ReadLine());
+            //if (0 < day && day < 32)
             //{
-            //    Console.WriteLine("Голова Васи пролезет в форточку");
+            //    Console.WriteLine($"{day} января");
+            //}
+            //else if (day > 31 && day < 60)
+            //{
+            //    int a = day - 31;
+            //    Console.WriteLine($"{a} февраля");
+            //}
+            //else if (day > 59 && day < 91)
+            //{
+            //    int b = day - 59;
+            //    Console.WriteLine($"{b} марта");
+            //}
+            //else if (day > 90 && day < 121)
+            //{
+            //    int c = day - 90;
+            //    Console.WriteLine($"{c} апреля");
+            //}
+            //else if (day > 120 && day < 152)
+            //{
+            //    int d = day - 120;
+            //    Console.WriteLine($"{d} мая");
+            //}
+            //else if (day > 151 && day < 182)
+            //{
+            //    int e = day - 151;
+            //    Console.WriteLine($"{e} июня");
+            //}
+            //else if (day > 181 && day < 213)
+            //{
+            //    int f = day - 181;
+            //    Console.WriteLine($"{f} июля");
+            //}
+            //else if (day > 212 && day < 243)
+            //{
+            //    int g = day - 212;
+            //    Console.WriteLine($"{g} августа");
+            //}
+            //else if (day > 242 && day < 274)
+            //{
+            //    int h = day - 242;
+            //    Console.WriteLine($"{h} сентября");
+            //}
+            //else if (day > 273 && day < 304)
+            //{
+            //    int i = day - 273;
+            //    Console.WriteLine($"{i} октября");
+            //}
+            //else if (day > 303 && day < 335)
+            //{
+            //    int j = day - 303;
+            //    Console.WriteLine($"{j} ноября");
+            //}
+            //else if (day > 334 && day < 366)
+            //{
+            //    int k = day - 334;
+            //    Console.WriteLine($"{k} декабря");
             //}
             //else
             //{
-            //    Console.WriteLine("Голова Васи не пролезет в форточку");
+            //    Console.WriteLine("Error");
             //}
             //Console.ReadKey();
 
-            //Console.WriteLine("Задача 2");
-            ////Напечатать таблицу умножения на число n (значение n вводится с клавиатуры; 1 <= n <= 9).
-            //Console.Write("Введите цифру от 1 до 9: ");
-            //int n = int.Parse(Console.ReadLine());
-            //int n1 = n;
-            //int n2 = n * 2;
-            //int n3 = n * 3;
-            //int n4 = n * 4;
-            //int n5 = n * 5;
-            //int n6 = n * 6;
-            //int n7 = n * 7;
-            //int n8 = n * 8;
-            //int n9 = n * 9;
-            //Console.WriteLine($"{n1} {n2} {n3}\n{n4} {n5} {n6}\n{n7} {n8} {n9}");
-            //Console.ReadKey();
+            //Console.WriteLine("Упражнение 4.2");
+            //Добавить к задаче из предыдущего упражнения
+            //проверку числа введенного пользователем. Если число меньше 1 или больше 365,
+            //программа должна вырабатывать исключение, и выдавать на экран сообщение.
+            //Сразу учла это условие
 
-            //Console.WriteLine("Задача 3");
-            ////Создайте программу, которая принимает на вход число и возвращает:
-            ////- “Бэнг” -если число делится на 3
-            ////- “Бум” -если число делится на 5
-            ////- “БэнгБум” -если число делится и на 3, и на 5
-            ////- “Мимо” -в остальных случаях.
-            ////Примечание: программа выводит только что-то одно.
-            //Console.Write("Введите любое число: ");
-            //int a = int.Parse(Console.ReadLine());
-            //if (a % 3 == 0 && a % 15 != 0)
+            //Console.WriteLine("Упражнение 4.1 (дз)");
+            ////Изменить программу из упражнений 4.1 и 4.2 так,
+            ////чтобы она учитывала год(високосный или нет). Год вводится с экрана. (Год
+            ////високосный, если он делится на четыре без остатка, но если он делится на 100
+            ////без остатка, это не високосный год.Однако, если он делится без остатка на 400,
+            ////это високосный год.)
+            //Console.Write("Введите год: ");
+            //int year = int.Parse(Console.ReadLine());
+            //if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
             //{
-            //    Console.WriteLine("Бэнг");
-            //}
-            //else if (a % 5 == 0 && a % 15 != 0)
-            //{
-            //    Console.WriteLine("Бум");
-            //}
-            //else if (a % 15 == 0)
-            //{
-            //    Console.WriteLine("БэнгБум");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Мимо");
-            //}
-            //Console.ReadKey();
-
-            //Console.WriteLine("Задача 4");
-            ////Проверить, введена ли с консоли строка ВСЕМИ ЗАГЛАВНЫМИ БУКВАМИ.
-            //Console.Write("Введите слово: ");
-            //string message1 = Console.ReadLine();
-            //bool message;
-            //if (message = message1.All(Char.IsUpper))
-            //{
-            //    Console.WriteLine(true);
-            //}
-            //else
-            //{
-            //    Console.WriteLine(false);
-            //}
-            //Console.ReadKey();
-
-            //Console.WriteLine("Задача 5");
-            ////Пользователь вводит в консоль положительное целое число, (например, 3)
-            ////вывести строку по шаблону: 1 овца... 2 овца... 3 овца...
-            //Console.Write("Введите число: ");
-            //int a = int.Parse(Console.ReadLine());
-            //int i = 1;
-            //while (i != a + 1)
-            //{
-            //    Console.Write(i + " овца... ");
-            //    i++;
-            //}
-            //Console.ReadKey();
-
-            //Console.WriteLine("Задача 6");
-            ////Обязательно использовать try-catch-(finally)
-            ////Дана непустая последовательность неотрицательных целых чисел,
-            ////оканчивающаяся отрицательным числом. Найти среднее арифметическое всех
-            ////чисел последовательности(без учета отрицательного числа).
-            //try
-            //{
-            //    int[] numbers = { 9, 7, 5, 3, 1, -1 };
-            //    int count = numbers.Count( i => i > 0);
-            //    int sum = numbers.Sum();
-            //    double x = sum / count;
-            //    Console.WriteLine($"Среднее арифметическое: {x}");
-            //}
-            //catch (DivideByZeroException)
-            //{
-            //    Console.WriteLine("Нельзя делить на ноль");
-            //}
-            //Console.ReadKey();
-
-            //Console.WriteLine("Задача 7");
-            ////Обязательно использовать try-catch-(finally)
-            ////Игральным картам условно присвоены следующие порядковые номера
-            ////в зависимости от их достоинства: «валету» — 11, «даме» — 12, «королю» — 13,
-            ////«тузу» — 14.Порядковые номера остальных карт соответствуют их названиям
-            ////(«шестерка», «девятка» и т. п.). По заданному номеру карты k(6 <= k <= 14)
-            ////определить достоинство соответствующей карты.
-            //try
-            //{
-            //    Console.Write("Введите значение карты: ");
-            //    int k = int.Parse(Console.ReadLine());
-            //    if (k == 6)
+            //    Console.Write("Введите число от 1 до 366: ");
+            //    int day = int.Parse(Console.ReadLine());
+            //    if (0 < day && day < 32)
             //    {
-            //        Console.WriteLine("Шестерка");
+            //        Console.WriteLine($"{day} января");
             //    }
-            //    else if (k == 7)
+            //    else if (day > 31 && day < 61)
             //    {
-            //        Console.WriteLine("Семерка");
+            //        int a = day - 31;
+            //        Console.WriteLine($"{a} февраля");
             //    }
-            //    else if (k == 8)
+            //    else if (day > 60 && day < 92)
             //    {
-            //        Console.WriteLine("Восьмерка");
+            //        int b = day - 60;
+            //        Console.WriteLine($"{b} марта");
             //    }
-            //    else if (k == 9)
+            //    else if (day > 91 && day < 122)
             //    {
-            //        Console.WriteLine("Девятка");
+            //        int c = day - 91;
+            //        Console.WriteLine($"{c} апреля");
             //    }
-            //    else if (k == 10)
+            //    else if (day > 121 && day < 153)
             //    {
-            //        Console.WriteLine("Десятка");
+            //        int d = day - 121;
+            //        Console.WriteLine($"{d} мая");
             //    }
-            //    else if (k == 11)
+            //    else if (day > 152 && day < 183)
             //    {
-            //        Console.WriteLine("Валет");
+            //        int e = day - 152;
+            //        Console.WriteLine($"{e} июня");
             //    }
-            //    else if (k == 12)
+            //    else if (day > 182 && day < 214)
             //    {
-            //        Console.WriteLine("Дама");
+            //        int f = day - 182;
+            //        Console.WriteLine($"{f} июля");
             //    }
-            //    else if (k == 13)
+            //    else if (day > 213 && day < 244)
             //    {
-            //        Console.WriteLine("Король");
+            //        int g = day - 213;
+            //        Console.WriteLine($"{g} августа");
             //    }
-            //    else if (k == 14)
+            //    else if (day > 243 && day < 275)
             //    {
-            //        Console.WriteLine("Туз");
+            //        int h = day - 242;
+            //        Console.WriteLine($"{h} сентября");
+            //    }
+            //    else if (day > 274 && day < 305)
+            //    {
+            //        int i = day - 274;
+            //        Console.WriteLine($"{i} октября");
+            //    }
+            //    else if (day > 304 && day < 336)
+            //    {
+            //        int j = day - 304;
+            //        Console.WriteLine($"{j} ноября");
+            //    }
+            //    else if (day > 335 && day < 367)
+            //    {
+            //        int k = day - 335;
+            //        Console.WriteLine($"{k} декабря");
             //    }
             //    else
             //    {
-            //        Console.WriteLine("Ошибка");
+            //        Console.WriteLine("Error");
             //    }
+            //    Console.ReadKey();
             //}
-            //catch (FormatException)
+            //else 
             //{
-            //    Console.WriteLine("Введите число");
-            //}
-            //finally
-            //{
-            //    Console.WriteLine("\nКонец ");
-            //}
-            //Console.ReadKey();
-
-            Console.WriteLine("Задача 8");
-            //Создать массив строк. При помощи foreach обойти весь массив.
-            //При встрече элемента "Hello Kitty" или "Barbie doll" необходимо положить их в “сумку”,
-            //т.е. прибавить к результату.Вывести на экран сколько кукол в “сумке”.
-            string[] bag = { "Hello Kitty", "Barbie doll", "toys", "Hello Kitty", "something", "Barbie doll", "cars", "Hello Kitty" };
-            foreach (string n in bag)
-            {
-                if (n == "Hello Kitty" && n == "Barbie doll")
-                {
-                    int count = n.Count();
-                    Console.WriteLine($"{n} - столько кукол Barbie и Hello Kitty в сумке");
-                }
+            //    Console.Write("Введите число от 1 до 365: ");
+            //    int day = int.Parse(Console.ReadLine());
+            //    if (0 < day && day < 32)
+            //    {
+            //        Console.WriteLine($"{day} января");
+            //    }
+            //    else if (day > 31 && day < 60)
+            //    {
+            //        int a = day - 31;
+            //        Console.WriteLine($"{a} февраля");
+            //    }
+            //    else if (day > 59 && day < 91)
+            //    {
+            //        int b = day - 59;
+            //        Console.WriteLine($"{b} марта");
+            //    }
+            //    else if (day > 90 && day < 121)
+            //    {
+            //        int c = day - 90;
+            //        Console.WriteLine($"{c} апреля");
+            //    }
+            //    else if (day > 120 && day < 152)
+            //    {
+            //        int d = day - 120;
+            //        Console.WriteLine($"{d} мая");
+            //    }
+            //    else if (day > 151 && day < 182)
+            //    {
+            //        int e = day - 151;
+            //        Console.WriteLine($"{e} июня");
+            //    }
+            //    else if (day > 181 && day < 213)
+            //    {
+            //        int f = day - 181;
+            //        Console.WriteLine($"{f} июля");
+            //    }
+            //    else if (day > 212 && day < 243)
+            //    {
+            //        int g = day - 212;
+            //        Console.WriteLine($"{g} августа");
+            //    }
+            //    else if (day > 242 && day < 274)
+            //    {
+            //        int h = day - 242;
+            //        Console.WriteLine($"{h} сентября");
+            //    }
+            //    else if (day > 273 && day < 304)
+            //    {
+            //        int i = day - 273;
+            //        Console.WriteLine($"{i} октября");
+            //    }
+            //    else if (day > 303 && day < 335)
+            //    {
+            //        int j = day - 303;
+            //        Console.WriteLine($"{j} ноября");
+            //    }
+            //    else if (day > 334 && day < 366)
+            //    {
+            //        int k = day - 334;
+            //        Console.WriteLine($"{k} декабря");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Error");
+            //    }
+            //    Console.ReadKey();
             }
-            Console.ReadKey();
-
-
         }
     }
 }
