@@ -18,13 +18,7 @@ namespace Class_work_6
         //            if (ch == cha)
         //                Count++;
         //    return Count;
-        //}
-        double[] ArrayAverage(params double[][] temp)
-        {
-            return Enumerable.Range(0, temp[0].Length)
-                       .Select(i => temp.Select(a => a.Skip(i).First()).Average())
-                       .ToArray();
-        }
+        //}   
         static void Main(string[] args)
         {
             //Console.WriteLine("Упражнение 6.1");
@@ -47,7 +41,7 @@ namespace Class_work_6
             //int[,] myArr1 = new int[3, 3];
             //int[,] myArr2 = new int[3, 3];
 
-            Console.WriteLine("Упражнение 6.2");
+            Console.WriteLine("Упражнение 6.3");
             //Написать программу, вычисляющую среднюю температуру за год.
             //Создать двумерный рандомный массив temperature[12, 30],
             //в котором будет храниться температура для каждого дня месяца
@@ -73,85 +67,124 @@ namespace Class_work_6
             }
             Console.WriteLine($"Средняя температура за год: {middleT}");
 
-            double[][] temp = new double[12][];
-            temp[0] = new double[30];
-            temp[1] = new double[30];
-            temp[2] = new double[30];
-            temp[3] = new double[30];
-            temp[4] = new double[30];
-            temp[5] = new double[30];
-            temp[6] = new double[30];
-            temp[7] = new double[30];
-            temp[8] = new double[30];
-            temp[9] = new double[30];
-            temp[10] = new double[30];
-            temp[11] = new double[30];
-            //int summ = 0;
-            //double middle = 0;
+            int[][] temp = new int[12][];
+            temp[0] = new int[30];
+            temp[1] = new int[30];
+            temp[2] = new int[30];
+            temp[3] = new int[30];
+            temp[4] = new int[30];
+            temp[5] = new int[30];
+            temp[6] = new int[30];
+            temp[7] = new int[30];
+            temp[8] = new int[30];
+            temp[9] = new int[30];
+            temp[10] = new int[30];
+            temp[11] = new int[30];
+            int summ1 = 0;
+            double middle1 = 0;
             for (int i = 0; i < 30; i++)
             {
                 temp[0][i] = random.Next(-20, 0);
-                Console.WriteLine(temp[i] + " ");
-                //summ += temp[0][i];
-                //middle = sum / 30;
+                summ1 += temp[0][i];
+                middle1 = summ1 / 30;
             }
-            for(int i = 0; i < 30; i++)
+            int summ2 = 0;
+            double middle2 = 0;
+            for (int i = 0; i < 30; i++)
             {
                 temp[1][i] = random.Next(-20, 0);
-                Console.WriteLine(temp[i] + " ");
+                summ2 += temp[0][i];
+                middle2 = summ2 / 30;
             }
+            int summ3 = 0;
+            double middle3 = 0;
             for (int i = 0; i < 30; i++)
             {
                 temp[2][i] = random.Next(-20, 10);
-                Console.WriteLine(temp[i] + " ");
+                summ3 += temp[0][i];
+                middle3 = summ3 / 30;
             }
+            int summ4 = 0;
+            double middle4 = 0;
             for (int i = 0; i < 30; i++)
             {
                 temp[3][i] = random.Next(-10, 20);
-                Console.WriteLine(temp[i] + " ");
+                summ4 += temp[0][i];
+                middle4 = summ4 / 30;
             }
+            int summ5 = 0;
+            double middle5 = 0;
             for (int i = 0; i < 30; i++)
             {
                 temp[4][i] = random.Next(5, 25);
-                Console.WriteLine(temp[i] + " ");
+                summ5 += temp[0][i];
+                middle5 = summ5 / 30;
             }
+            int summ6 = 0;
+            double middle6 = 0;
             for (int i = 0; i < 30; i++)
             {
                 temp[5][i] = random.Next(10, 35);
-                Console.WriteLine(temp[i] + " ");
+                summ6 += temp[0][i];
+                middle6 = summ6 / 30;
             }
+            int summ7 = 0;
+            double middle7 = 0;
             for (int i = 0; i < 30; i++)
             {
                 temp[6][i] = random.Next(10, 35);
-                Console.WriteLine(temp[i] + " ");
+                summ7 += temp[0][i];
+                middle7 = summ7 / 30;
             }
+            int summ8 = 0;
+            double middle8 = 0;
             for (int i = 0; i < 30; i++)
             {
                 temp[7][i] = random.Next(10, 35);
-                Console.WriteLine(temp[i] + " ");
+                summ8 += temp[0][i];
+                middle8 = summ8 / 30;
             }
+            int summ9 = 0;
+            double middle9 = 0;
             for (int i = 0; i < 30; i++)
             {
                 temp[8][i] = random.Next(-10, 20);
-                Console.WriteLine(temp[i] + " ");
+                summ9 += temp[0][i];
+                middle9 = summ9 / 30;
             }
+            int summ10 = 0;
+            double middle10 = 0;
             for (int i = 0; i < 30; i++)
             {
                 temp[9][i] = random.Next(-20, 10);
-                Console.WriteLine(temp[i] + " ");
+                summ10 += temp[0][i];
+                middle10 = summ10 / 30;
             }
+            int summ11 = 0;
+            double middle11 = 0;
             for (int i = 0; i < 30; i++)
             {
                 temp[10][i] = random.Next(-20, 5);
-                Console.WriteLine(temp[i] + " ");
+                summ11 += temp[0][i];
+                middle11 = summ11 / 30;
             }
+            int summ12 = 0;
+            double middle12 = 0;
             for (int i = 0; i < 30; i++)
             {
                 temp[11][i] = random.Next(-20, 0);
-                Console.WriteLine(temp[i] + " ");
+                summ12 += temp[0][i];
+                middle12 = summ12 / 30;
             }
-            var averages = ArrayAverage(temp[0], temp[1], temp[2], temp[3], temp[4], temp[5], temp[6], temp[7], temp[8], temp[9], temp[10], temp[11]);
-            //Console.WriteLine($"Средняя температура: {middle}");
+            double[] averageTemp = new double[12] {middle1, middle2, middle3, middle4, middle5, middle6, middle7, middle8, middle9, middle10, middle11, middle12 };
+            Console.WriteLine("Средняя температура в каждом месяце: ");
+            for (int i = 0; i < averageTemp.Length; i++)
+            {
+                Console.WriteLine(averageTemp[i]);
+            }
+            Console.ReadKey();
+
+
         }
     }
 }
