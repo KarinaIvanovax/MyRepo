@@ -9,48 +9,91 @@ namespace Class_work_6
 {
     internal class Program
     {
-        //static int CountLetters(char[] array, char[] arr)
-        //{
-        //    int Count = 0;
+        static int CountLetters(char[] array, char[] arr)
+        {
+            int Count = 0;
 
-        //    foreach (char ch in array)
-        //        foreach (char cha in arr)
-        //            if (ch == cha)
-        //                Count++;
-        //    return Count;
-        //}   
+            foreach (char ch in array)
+                foreach (char cha in arr)
+                    if (ch == cha)
+                        Count++;
+            return Count;
+        }
+
+        static int[,] Matrix(int[,] arr1, int[,] arr2)
+        {
+            if (arr1.GetLength(1) != arr2.GetLength(1))
+            { 
+                throw new Exception("Ошибка!");
+            }
+            int[,] array = new int[arr1.GetLength(0), arr1.GetLength(1)];
+            for (int i = 0; i < arr1.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr2.GetLength(0); j++)
+                {
+                    for (int k = 0; k < arr1.GetLength(1); k++)
+                    {
+                        array[i, j] += arr1[i, k] * arr2[i, k];
+                    }
+                }
+            }
+            return array;
+        }
+
         static void Main(string[] args)
         {
-            //Console.WriteLine("Упражнение 6.1");
-            ////Написать программу, которая вычисляет число гласных и согласных букв в файле.
-            //char[] glasnye = "аеиоуыэюя".ToUpper().ToCharArray(); 
-            //char[] sogl = "бвгджзйклмнпрстфхцчшщъь".ToUpper().ToCharArray();
-            //Console.Write("Введите предложение: ");
-            //string message = Console.ReadLine(); 
-            //char[] array = message.ToUpper().ToCharArray(); 
-            //int glasnyeCount = CountLetters(array, glasnye); 
-            //int soglCount = CountLetters(array, sogl); 
-            //Console.WriteLine($"Количество гласных: {glasnyeCount}");
-            //Console.WriteLine($"Количество согласных: {soglCount}");
-            //Console.ReadKey();
+            Console.WriteLine("Упражнение 6.1");
+            //Написать программу, которая вычисляет число гласных и согласных букв в файле.
+            char[] glasnye = "аеиоуыэюя".ToUpper().ToCharArray();
+            char[] sogl = "бвгджзйклмнпрстфхцчшщъь".ToUpper().ToCharArray();
+            Console.Write("Введите предложение: ");
+            string message = Console.ReadLine();
+            char[] array = message.ToUpper().ToCharArray();
+            int glasnyeCount = CountLetters(array, glasnye);
+            int soglCount = CountLetters(array, sogl);
+            Console.WriteLine($"Количество гласных: {glasnyeCount}");
+            Console.WriteLine($"Количество согласных: {soglCount}");
+            Console.ReadKey();
 
-            //Console.WriteLine("Упражнение 6.2");
-            ////Написать программу, реализующую умножению двух матриц, заданных в виде двумерного массива.
-            ////В программе предусмотреть два метода: метод печати матрицы,
-            ////метод умножения матриц(на вход две матрицы, возвращаемое значение – матрица).
-            //int[,] myArr1 = new int[3, 3];
-            //int[,] myArr2 = new int[3, 3];
+            Console.WriteLine("Упражнение 6.2");
+            //Написать программу, реализующую умножению двух матриц, заданных в виде двумерного массива.
+            //В программе предусмотреть два метода: метод печати матрицы,
+            //метод умножения матриц(на вход две матрицы, возвращаемое значение – матрица).
+            Random random = new Random();
+            Console.WriteLine("Введите размер первой матрицы: ");
+            Console.Write("i = ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("j = ");
+            int b = Convert.ToInt32(Console.ReadLine());
+            int[,] myArr1 = new int[a, b];
+            for (int i = 0; i < myArr1.GetLength(0); i++)
+            {
+                for (int j = 0; j < myArr1.GetLength(1); j++)
+                {
+                    myArr1[i, j] = random.Next(0, 9);
+                    Console.Write(myArr1[i, j]);
+                }
+            }
+            Console.WriteLine("\nВведите размер второй матрицы: ");
+            Console.Write("i = ");
+            int c = Convert.ToInt32(Console.ReadLine());
+            Console.Write("j = ");
+            int d = Convert.ToInt32(Console.ReadLine());
+            int[,] myArr2 = new int[c, d];
+            for (int i = 0; i < myArr2.GetLength(0); i++)
+            {
+                for (int j = 0; j < myArr2.GetLength(1); j++)
+                {
+                    myArr2[i, j] = random.Next(0, 9);
+                    Console.Write(myArr2[i, j]);
+                }
+            }
+            int[,] array = Matrix(myArr1, myArr2);
+            Console.Write(array);
+            Console.ReadKey();
 
             Console.WriteLine("Упражнение 6.3");
             //Написать программу, вычисляющую среднюю температуру за год.
-            //Создать двумерный рандомный массив temperature[12, 30],
-            //в котором будет храниться температура для каждого дня месяца
-            //(предполагается, что в каждом месяце 30 дней).
-            //Сгенерировать значения температур случайным образом.
-            //Для каждого месяца распечатать среднюю температуру.
-            //Для этого написать метод, который по массиву temperature[12, 30] для каждого месяца
-            //вычисляет среднюю температуру в нем, и в качестве результата возвращает
-            //массив средних температур.Полученный массив средних температур отсортировать по возрастанию.
             int[,] temperature = new int[12, 30];
             Random random = new Random();
             int sum = 0;
@@ -176,7 +219,7 @@ namespace Class_work_6
                 summ12 += temp[0][i];
                 middle12 = summ12 / 30;
             }
-            double[] averageTemp = new double[12] {middle1, middle2, middle3, middle4, middle5, middle6, middle7, middle8, middle9, middle10, middle11, middle12 };
+            double[] averageTemp = new double[12] { middle1, middle2, middle3, middle4, middle5, middle6, middle7, middle8, middle9, middle10, middle11, middle12 };
             Console.WriteLine("Средняя температура в каждом месяце: ");
             for (int i = 0; i < averageTemp.Length; i++)
             {
