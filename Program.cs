@@ -4,92 +4,132 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tumakov
+namespace Lesson_7__ot_20._10._22_
 {
-    //class Person
-    //{
-    //    public string name = "Undefined";
-    //    public int age;
-
-    //    public void Print()
-    //    {
-    //        Console.WriteLine($"Имя: {name}  Возраст: {age}");
-    //    }
-    //}
-    class Building
+    enum BankAcc
     {
-        private string number = "0";
-        public string Number
-        {
-            get {  return number;  }
-            set {  number = value; }
-        }
-        private float height = 0;
-        public float Height
-        {
-            get { return height; }
-            set { height = value; }
-        }
-        private int floors = 0;
-        public int Floor
-        {
-            get { return floors; }
-            set { floors = value; }
-        }
-        private int flats = 0;
-        public int Flat
-        {
-            get { return flats; }
-            set { flats = value; }
-        }
-        private int entrances = 0;
-        public int Entrance
-        {
-            get { return entrances; }
-            set { entrances = value; }
-        }
-        public override string ToString() => $": {Number}\n: {Height}\nТип счета: {Floor}\n{Flat}\n{Entrance}";
+        savings,
+        current
     }
-    class Program
+    internal class BankAccounts
     {
-        static void Main()
+        public int AccNumber { get; set; }
+        public decimal Balance { get; set; }
+        public BankAcc Type { get; set; }
+        public BankAccounts(int accNumber, decimal balance, BankAcc type)
         {
-            //Person tom = new Person();  // создание объекта класса Person
+            AccNumber = accNumber;
+            Balance = balance;
+            Type = type;
+        }
+        public override string ToString() => $"Номер счета: {AccNumber}\nБаланс: {Balance}\nТип счета: {Type}";
 
-            //// Получаем значение полей в переменные
-            //string personName = tom.name;
-            //int personAge = tom.age;
-            //Console.WriteLine($"Имя: {personName}  Возраст {personAge}");   // Имя: Undefined  Возраст: 0
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Задача 7.1");
+            Console.WriteLine("Текущий счет => нажмите 1\nСберегательный счет => нажмите 2 ");
+            int c = int.Parse(Console.ReadLine());
+            if (c == 1)
+            {
+                BankAccounts bank = new BankAccounts(000000, 10000, BankAcc.savings);
+                Console.WriteLine(bank);
+            }
+            else if (c == 2)
+            {
+                BankAccounts bank = new BankAccounts(00000, 10000, BankAcc.current);
+                Console.WriteLine(bank);
+            }
+            else
+            {
+                Console.WriteLine("Error");
+            }
+            Console.WriteLine();
 
-            //// устанавливаем новые значения полей
-            //tom.name = "Tom";
-            //tom.age = 37;
+            Console.WriteLine("Задача 7.2");
+            Random random = new Random();
+            Console.WriteLine("Текущий счет => нажмите 1\nСберегательный счет => нажмите 2 ");
+            int c2 = int.Parse(Console.ReadLine());
+            if (c2 == 1)
+            {
+                int a = random.Next(1000, 9999);
+                BankAccounts bank = new BankAccounts(a, 10000, BankAcc.savings);
+                Console.WriteLine(bank);
+            }
+            else if (c2 == 2)
+            {
+                int b = random.Next(1000, 9999);
+                BankAccounts bank = new BankAccounts(b, 10000, BankAcc.current);
+                Console.WriteLine(bank);
+            }
+            else
+            {
+                Console.WriteLine("Error");
+            }
+            Console.WriteLine();
 
-            //// обращаемся к методу Print
-            //tom.Print();
+            Console.WriteLine("Задача 7.3");
+            Console.WriteLine("Текущий счет => нажмите 1\nСберегательный счет => нажмите 2 ");
+            int c3 = int.Parse(Console.ReadLine());
+            if (c3 == 1)
+            {
+                decimal balance = 99999;
+                BankAccounts bank = new BankAccounts(000000, balance, BankAcc.savings);
+                Console.WriteLine(bank);
+                Console.WriteLine("Хотите снять средства со сберегательного счета?");
+                string m = Console.ReadLine();
+                if (m == "да" || m == "Да")
+                {
+                    Console.Write("Введите сумму, которую хотите снять: ");
+                    decimal sum = int.Parse(Console.ReadLine());
+                    if (sum > balance)
+                    {
+                        Console.WriteLine("Невозможно провести операцию");
+                    }
+                    else
+                    {
+                        decimal newbalance = balance - sum;
+                        Console.WriteLine($"Остаток на счете: {newbalance}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Завершение программы");
+                }
+            }
+            else if (c3 == 2)
+            {
+                decimal balance = 19839547;
+                BankAccounts bank = new BankAccounts(00000,balance, BankAcc.current);
+                Console.WriteLine(bank);
+                Console.WriteLine("Хотите снять средства с текущего счета?");
+                string m = Console.ReadLine();
+                if (m == "да" || m == "Да")
+                {
+                    Console.Write("Введите сумму, которую хотите снять: ");
+                    decimal sum = int.Parse(Console.ReadLine());
+                    if (sum > balance)
+                    {
+                        Console.WriteLine("Невозможно провести операцию");
+                    }
+                    else
+                    {
+                        decimal newbalance = balance - sum;
+                        Console.WriteLine($"Остаток на счете: {newbalance}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Завершение программы");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error");
+            }
+            Console.ReadKey();
 
-            Building building = new Building();
-            Console.WriteLine("Номер дома, высота, этажность, квартиры, подъезды: ");
-            building.Number = Console.ReadLine();
-            string number = building.Number;
-            building.Height = float.Parse(Console.ReadLine());
-            float height = building.Height;
-            building.Floor = int.Parse(Console.ReadLine());
-            int floors = building.Floor;
-            building.Flat = int.Parse(Console.ReadLine());
-            int flats = building.Flat;
-            building.Entrance = int.Parse(Console.ReadLine());
-            int entrances = building.Entrance;
-            Console.WriteLine(building);  
-            //Реализовать класс для описания здания
-            //(уникальный номер здания, высота, этажность, количество квартир, подъездов).
-            //Поля сделать закрытыми, предусмотреть методы для заполнения полей и
-            //получения значений полей для печати. Добавить методы вычисления высоты этажа,
-            //количества квартир в подъезде, количества квартир на этаже и т.д.
-            //Предусмотреть возможность, чтобы уникальный номер здания генерировался программно.
-            //Для этого в классе предусмотреть статическое поле, которое бы хранило
-            //последний использованный номер здания, и предусмотреть метод, который увеличивал бы значение этого поля.
+            Console.WriteLine("Домашнее задание 7.1");
+
         }
     }
-    
 }
