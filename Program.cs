@@ -1,87 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lesson_8
+namespace Lesson_9
 {
-    enum BankAcc
+    internal class Program
     {
-        savings,
-        current
-    }
-    internal class BankAccounts
-    {
-        public int AccNumber { get; set; }
-        public decimal Balance { get; set; }
-        public BankAcc Type { get; set; }
-        public BankAccounts(int accNumber, decimal balance, BankAcc type)
-        {
-            AccNumber = accNumber;
-            Balance = balance;
-            Type = type;
-        }
-        public override string ToString() => $"Номер счета: {AccNumber}\nБаланс: {Balance}\nТип счета: {Type}";
-        class CurrentB
-        {
- 
-            public void Current()
-            {
-                Console.WriteLine("");
-                Console.ReadKey();
-            }
-        }
-        class SavingsB
-        {
-            public void Saving()
-            {
-                decimal Balance;
-                Balance = 0;
-                Console.WriteLine("Введите сумму, которую хотите перевести: ");
-                decimal sum1 = decimal.Parse(Console.ReadLine());
-                if (sum1 > Balance)
-                {
-                    decimal operation = Balance - sum1;
-                    Console.WriteLine($" ");
-                }
-                //Console.ReadKey();
-            }
-        }
         static void Main(string[] args)
         {
-            Console.WriteLine("Задача 7.2");
-            Random random = new Random();
-            Console.WriteLine("Текущий счет => нажмите 1\nСберегательный счет => нажмите 2 ");
-            int c2 = int.Parse(Console.ReadLine());
-            if (c2 == 1)
+            Console.WriteLine("Задача 9.1");
+            Savings sav = new Savings();
+            sav.PrintSavings();
+            Current cur = new Current();
+            cur.PrintCurrent();
+            Console.WriteLine();
+            Console.WriteLine("\nХотите перевести деньги из первого банка во второй?");
+            string answer1 = Console.ReadLine();
+            if (answer1 == "да" || answer1 == "Да")
             {
-                int a = random.Next(1000, 9999);
-                int cur = int.Parse(Console.ReadLine());
-                BankAccounts bank = new BankAccounts(a, cur, BankAcc.savings);
-                Console.WriteLine(bank);
-                Console.WriteLine("\nХотите перевести деньги с текущего счета на сберегательный?");
-                string answer = Console.ReadLine();
-                if (answer == "да" || answer == "Да")
+                Console.WriteLine("С какого счета хотите перевести?");
+                string answer2 = Console.ReadLine();
+                if (answer2 == "сберегательный")
                 {
-
+                    Console.WriteLine("Какую сумму хотите перевести?");
+                    int amount = Convert.ToInt32(Console.ReadLine());
+                    sav.MoneyTransferS(amount);
                 }
-                else
+                else if (answer2 == "текущий")
                 {
-                    Console.WriteLine("Завершение программы");
-                }
-            }
-            else if (c2 == 2)
-            {
-                int b = random.Next(1000, 9999);
-                int sav = int.Parse(Console.ReadLine());
-                BankAccounts bank = new BankAccounts(b, sav, BankAcc.current);
-                Console.WriteLine(bank);
-                Console.WriteLine("\nХотите перевести деньги с текущего счета на сберегательный?");
-                string answer = Console.ReadLine();
-                if (answer == "да" || answer == "Да")
-                {
-
+                    Console.WriteLine("Какую сумму хотите перевести?");
+                    int amount = Convert.ToInt32(Console.ReadLine());
+                    cur.MoneyTransferC(amount);
                 }
                 else
                 {
@@ -90,9 +42,13 @@ namespace Lesson_8
             }
             else
             {
-                Console.WriteLine("Error");
+                Console.WriteLine("Завершение программы");
             }
             Console.WriteLine();
+
+            Console.WriteLine("Домашнее задание 9.1");
+            Song mySong = new Song();
+            mySong.Title();
         }
     }
 }
